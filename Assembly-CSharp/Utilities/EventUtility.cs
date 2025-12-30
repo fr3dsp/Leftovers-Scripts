@@ -1,115 +1,145 @@
 ﻿using System;
-using Il2CppDummyDll;
 using UnityEngine;
 
 namespace Leftovers.Utilities
 {
-	// Token: 0x02000002 RID: 2
-	[Token(Token = "0x2000002")]
 	public class EventUtility : MonoBehaviour
 	{
-		// Token: 0x06000001 RID: 1 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x6000001")]
-		[Address(RVA = "0x73F2A0", Offset = "0x73E6A0", VA = "0x18073F2A0")]
 		public void EnablePlayerControls()
 		{
-		}
+            var instance = Leftovers_Player_PlayerController.instance;
+            if (instance == null)
+                return;
 
-		// Token: 0x06000002 RID: 2 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x6000002")]
-		[Address(RVA = "0x73F0E0", Offset = "0x73E4E0", VA = "0x18073F0E0")]
+            instance.handleKeyboardInput = true;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
 		public void DisablePlayerControls()
 		{
-		}
+            var instance = Leftovers_Player_PlayerController.instance;
+            if (instance == null)
+                return;
 
-		// Token: 0x06000003 RID: 3 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x6000003")]
-		[Address(RVA = "0x73F3B0", Offset = "0x73E7B0", VA = "0x18073F3B0")]
+            instance.handleKeyboardInput = false;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
 		public void EnablePlayerMovement()
 		{
-		}
+            var instance = Leftovers_Player_PlayerController.instance;
+            if (instance == null)
+                return;
 
-		// Token: 0x06000004 RID: 4 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x6000004")]
-		[Address(RVA = "0x73F1F0", Offset = "0x73E5F0", VA = "0x18073F1F0")]
+            instance.handleKeyboardInput = true;
+        }
+
 		public void DisablePlayerMovement()
 		{
-		}
+            var instance = Leftovers_Player_PlayerController.instance;
+            if (instance == null)
+                return;
 
-		// Token: 0x06000005 RID: 5 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x6000005")]
-		[Address(RVA = "0x73F630", Offset = "0x73EA30", VA = "0x18073F630")]
+            instance.handleKeyboardInput = false;
+        }
+
 		public void SetPlayerLookAt(Transform lookAt)
 		{
-		}
+            var instance = Leftovers_Player_PlayerController.instance;
+            if (instance == null)
+                return;
 
-		// Token: 0x06000006 RID: 6 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x6000006")]
-		[Address(RVA = "0x73F700", Offset = "0x73EB00", VA = "0x18073F700")]
+            instance.lookAt = lookAt;
+        }
+
 		public void StartPlayerZoomIn(float duration)
 		{
-		}
+            var instance = Leftovers_Player_PlayerController.instance;
+            if (instance == null)
+                return;
 
-		// Token: 0x06000007 RID: 7 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x6000007")]
-		[Address(RVA = "0x73F7E0", Offset = "0x73EBE0", VA = "0x18073F7E0")]
+            float zoomAmount = instance.zoomAmount;
+            instance.zoomDuration = duration;
+            instance.zoomStartAmount = zoomAmount;
+            instance.zoomTimer = 0f;
+            instance.zoomPhase = 1;
+        }
+
 		public void StartPlayerZoomOut(float duration)
 		{
-		}
+            var instance = Leftovers_Player_PlayerController.instance;
+            if (instance == null)
+                return;
 
-		// Token: 0x06000008 RID: 8 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x6000008")]
-		[Address(RVA = "0x73EEF0", Offset = "0x73E2F0", VA = "0x18073EEF0")]
+            Debug.Log("Starting player zoom out");
+
+            float zoomAmount = instance.zoomAmount;
+            instance.zoomDuration = duration;
+            instance.zoomStartAmount = zoomAmount;
+            instance.zoomTimer = 0f;
+            instance.zoomPhase = 2;
+        }
+
 		public void ClearPlayerLookAt()
 		{
-		}
+            var instance = Leftovers_Player_PlayerController.instance;
+            if (instance == null)
+                return;
 
-		// Token: 0x06000009 RID: 9 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x6000009")]
-		[Address(RVA = "0x73EFB0", Offset = "0x73E3B0", VA = "0x18073EFB0")]
+            instance.lookAt = null;
+        }
+
 		public void CopyCameraTransform(Transform copier)
 		{
-		}
+            var instance = Leftovers_Player_PlayerController.instance;
+            if (instance == null || instance.cameraContainer == null || copier == null)
+                return;
 
-		// Token: 0x0600000A RID: 10 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x600000A")]
-		[Address(RVA = "0x73F4C0", Offset = "0x73E8C0", VA = "0x18073F4C0")]
+            copier.position = instance.cameraContainer.position;
+            copier.rotation = instance.cameraContainer.rotation;
+        }
+
 		public void ResumeGame()
 		{
-		}
+            var instance = Leftovers_Player_PlayerController.instance;
+            if (instance == null || instance.pauseMenu == null)
+                return;
 
-		// Token: 0x0600000B RID: 11 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x600000B")]
-		[Address(RVA = "0x73F460", Offset = "0x73E860", VA = "0x18073F460")]
+            if (instance.pausedMouse)
+            {
+                instance.handleMouseInput = true;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+
+            if (instance.pausedKeyboard)
+            {
+                instance.handleKeyboardInput = true;
+            }
+
+            Time.timeScale = 1f;
+            instance.pauseMenu.SetActive(false);
+        }
+
 		public void QuitGame()
 		{
-		}
+            Application.Quit();
+        }
 
-		// Token: 0x0600000C RID: 12 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x600000C")]
-		[Address(RVA = "0x73F470", Offset = "0x73E870", VA = "0x18073F470")]
-		[Attribute(Name = "ContextMenu", RVA = "0xA4FA0", Offset = "0xA43A0")]
 		public void RestartGame()
 		{
-		}
+            SceneManager.LoadScene(0);
+        }
 
-		// Token: 0x0600000D RID: 13 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x600000D")]
-		[Address(RVA = "0x73F5C0", Offset = "0x73E9C0", VA = "0x18073F5C0")]
 		public void SetMouseSensitivity(float value)
 		{
-		}
+            Leftovers_Player_PlayerController.MouseSensitivity = value;
+        }
 
-		// Token: 0x0600000E RID: 14 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x600000E")]
-		[Address(RVA = "0x73F6F0", Offset = "0x73EAF0", VA = "0x18073F6F0")]
 		public void SetVolume(float value)
 		{
-		}
+            AudioListener.volume = value;
+        }
 
-		// Token: 0x0600000F RID: 15 RVA: 0x00002050 File Offset: 0x00000250
-		[Token(Token = "0x600000F")]
-		[Address(RVA = "0x1E0E10", Offset = "0x1E0210", VA = "0x1801E0E10")]
 		public EventUtility()
 		{
 		}

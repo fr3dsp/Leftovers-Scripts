@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0DAA904-1E78-4B1B-A02F-14D620745464}</ProjectGuid>
+    <ProjectGuid>{A6453204-E685-4E88-8B2D-6753BE227C55}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Leftovers</RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -32,25 +32,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Il2CppDummyDll">
-      <HintPath>..\..\Leftovershi\DummyDll\Il2CppDummyDll.dll</HintPath>
+      <HintPath>..\..\DummyDll\Il2CppDummyDll.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>..\..\Leftovershi\DummyDll\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>..\..\DummyDll\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>..\..\Leftovershi\DummyDll\UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>..\..\DummyDll\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
-      <HintPath>..\..\Leftovershi\DummyDll\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>..\..\DummyDll\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\Leftovershi\DummyDll\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\DummyDll\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\Leftovershi\DummyDll\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>..\..\DummyDll\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\Leftovershi\DummyDll\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\DummyDll\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
